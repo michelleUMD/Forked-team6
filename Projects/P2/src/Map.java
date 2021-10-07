@@ -69,8 +69,17 @@ public class Map{
 	}
 
 	public boolean attack(String Name) {
+		boolean res = false;
+		if (components.containsKey(Name) == true) {
+			JComponent sus_ghost = components.getKey(Name);
+			if (sus_ghost.attack()) { 
+				gameOver = true;
+				res = true;
+			}
+		}
 		//update gameOver
-		return false;
+		
+		return res;
 	}
 	
 	public JComponent eatCookie(String name) {

@@ -19,6 +19,6 @@ public class TestConsume extends TestCase {
 		//Start The Game
 		frame.startGame();
 
-		assertTrue(pacman.consume() != null);	
+		assertTrue(pacman.consume() != null);
 	}
 }

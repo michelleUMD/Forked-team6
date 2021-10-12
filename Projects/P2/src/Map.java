@@ -56,15 +56,19 @@ public class Map{
 		//update locations, components, and field
 		//use the setLocation method for the component to move it to the new location
 		//
-		JComponent temp = components.get(name);
-		components.remove(name);
-		Location temp_loc = loc.get(name);
-		field.get(temp_loc).remove(type);
-		locations.remove(name);
+		if(getLoc(loc).equals(Map.Type.EMPTY) || getLoc(loc).equals(Map.Type.COOKIE)){
+			JComponent temp = components.get(name);
+			components.remove(name);
+			Location temp_loc = loc.get(name);
+			field.get(temp_loc).remove(type);
+			locations.remove(name);
 
-		this.add(name, loc, temp, type);
+			this.add(name, loc, temp, type);
 
-		return true;
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {

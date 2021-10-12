@@ -21,6 +21,8 @@ public class Ghost{
 	}
 
 	public boolean is_pacman_in_range() { 
+
+		// This is the case that Pacman is not in range
 		return false;
 	}
 

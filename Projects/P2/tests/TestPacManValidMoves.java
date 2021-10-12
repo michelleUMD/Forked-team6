@@ -21,9 +21,14 @@ public class TestPacManValidMoves extends TestCase {
 
 		ArrayList<Location> arr = new ArrayList<>();
 		arr.add(1,2);
+
+		boolean b =false;
+		if(arr == pacman.get_valid_moves()){
+			b = true;
+		}
 		
 		// should be surrounded by walls, hence no possible move
-		assertFalse(arr);
+		assertFalse(b);
 
 
 	}

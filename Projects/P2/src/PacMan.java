@@ -39,7 +39,9 @@ public class PacMan{
 			arr.add(x_coordinate-1, y_coordinate+1);
 		}
 
-        return arr;	
+		//return arraylist
+		return arr;
+		
 	}
 
 	public boolean move() {

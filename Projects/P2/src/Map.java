@@ -101,7 +101,8 @@ public class Map{
 		Location nameLoc = this.locations.get(name);
 		HashSet<Type> fieldEl = this.fields.get(nameLoc);
 		if (fieldEl.containsKey(Map.Type.COOKIE) && fieldEl.containsKey(Map.Type.PACMAN)) {
-			this.locations.remove(name);
+			//this.locations.remove(name);
+			this.locations.remove("tok_x" + nameLoc.x + "_y" + nameLoc.y);
 			JComponent toReturn = this.components.get(name);
 			this.components.remove(name);
 			field.get(nameLoc).remove(Map.Type.COOKIE);

@@ -15,9 +15,10 @@ public class Ghost{
 	public ArrayList<Location> get_valid_moves() {
 		int x_coordinate, y_coordinate;
 		x_coordinate = this.myLoc.x;
-		ArrayList<Location> arr = new ArrayList<>();
+		ArrayList<Location> arr = new ArrayList<>(); //makes the result arrayList
 		y_coordinate = this.myLoc.y;
-        boolean b = false;
+        	boolean b = false;
+		
 
         if(!(myMap.getLoc(new Location(x_coordinate+1, y_coordinate)).contains(Map.Type.WALL))){
 			arr.add(x_coordinate+1, y_coordinate);
@@ -37,7 +38,7 @@ public class Ghost{
 			arr.add(x_coordinate-1, y_coordinate+1);
 		}
 
-        return arr;
+        	return arr;
 	}
 
 	public boolean move() {

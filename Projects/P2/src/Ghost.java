@@ -50,6 +50,8 @@ public class Ghost{
 	}
 
 	public boolean is_pacman_in_range() { 
+
+		// This is the case that Pacman is not in range
 		int x_val, y_val;
 		x_val = this.myLoc.x;
 		y_val = this.myLoc.y;
@@ -71,7 +73,6 @@ public class Ghost{
 		} else if (myMap.getLoc(new Location(x_val-1, y_val+1)).contains(Map.Type.PACMAN) && x_val != 0) {
 			return true;
 		}
-
 		return false;
 	}
 

@@ -1,6 +1,7 @@
 import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
+import java.util.ArrayList;
 
 public class TestPacManValidMoves extends TestCase {
 
@@ -19,7 +20,6 @@ public class TestPacManValidMoves extends TestCase {
 
 		ArrayList<Location> arr = new ArrayList<>();
 		arr.add(1,2);
-
 		boolean bool =false;
 		if(arr == pacman.get_valid_moves()){
 			bool = true;
@@ -27,5 +27,13 @@ public class TestPacManValidMoves extends TestCase {
 		
 		// return false
 		assertFalse(bool);
+		boolean b =false;
+		if(arr == pacman.get_valid_moves()){
+			b = true;
+		}
+		
+		// should be surrounded by walls, hence no possible move
+		assertFalse(b);
+
 	}
 }

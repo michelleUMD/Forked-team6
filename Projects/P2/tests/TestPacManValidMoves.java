@@ -6,7 +6,6 @@ import java.util.ArrayList;
 public class TestPacManValidMoves extends TestCase {
 
 	public void testPacManValidMoves() throws FileNotFoundException{
-		
 		NoFrame frame = new NoFrame(); //Creates A New Map With Walls and Tokens w/o a Display
 
 		//Creating Players
@@ -21,7 +20,13 @@ public class TestPacManValidMoves extends TestCase {
 
 		ArrayList<Location> arr = new ArrayList<>();
 		arr.add(1,2);
-
+		boolean bool =false;
+		if(arr == pacman.get_valid_moves()){
+			bool = true;
+		}
+		
+		// return false
+		assertFalse(bool);
 		boolean b =false;
 		if(arr == pacman.get_valid_moves()){
 			b = true;
@@ -29,7 +34,6 @@ public class TestPacManValidMoves extends TestCase {
 		
 		// should be surrounded by walls, hence no possible move
 		assertFalse(b);
-
 
 	}
 }

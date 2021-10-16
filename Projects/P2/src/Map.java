@@ -60,7 +60,7 @@ public class Map{
 		if(getLoc(loc).equals(Map.Type.EMPTY) || getLoc(loc).equals(Map.Type.COOKIE)){
 			JComponent temp = components.get(name);
 			components.remove(name);
-			Location temp_loc = loc.get(name);
+			Location temp_loc = locations.get(name);///loc to locations
 			field.get(temp_loc).remove(type);
 			locations.remove(name);
 
@@ -73,26 +73,40 @@ public class Map{
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
-		HashSet<Type> res;
-		if (wallSet.contains(loc)) { res = Map.Type.WALL; }
-		else if (emptySet.contains(loc)) { res = Map.Type.EMPTY; }
-		else {
-			res = field.get(loc);
+		HashSet<Type> res = new HashSet<>();
+		if (wallSet.contains(loc)) { res.add(Map.Type.WALL); }
+		else if (emptySet.contains(loc)) { res.add(Map.Type.EMPTY); }
+		// else {
+		// 	res.add(field.get(loc));
+		// }
+		for (Type t : field.get(loc)) {//\\
+			res.add(t);
 		}
 		return res;
 	}
 
-	public boolean attack(String Name) {
-		boolean res = false;
-		if (components.containsKey(Name) == true) {
-			JComponent sus_ghost = components.getKey(Name);
-			if (sus_ghost.attack()) { 
-				gameOver = true;
-				res = true;
-			}
-		}
-		//update gameOver
+	public boolean attack(String name) {
+		// boolean res = false;
+		// if (components.containsKey(Name) == true) {
+		// 	JComponent sus_ghost = components.get(Name);
+		// 	if (sus_ghost.attack()) { 
+		// 		gameOver = true;
+		// 		res = true;
+		// 	}
+		// }
+		// //update gameOver
 		
+		// return res;
+		boolean res = false;
+		Location attackerLoc = locations.get(name);
+		Location pacLoc = locations.get("pacman");
+		int xSub = attackerLoc.x - pacLoc.x;
+		int ySub = attackerLoc.y - pacLoc.y;
+		if ((ySub == 0 || ySub == 1 || ySub == -1) || (xSub == 0 || xSub == 1 || xSub == -1)) {
+			components.remove("pacman");
+			gameOver = true;
+			return true;
+		}
 		return res;
 	}
 	
@@ -100,8 +114,8 @@ public class Map{
 		//update locations, components, field, and cookies
 		//the id for a cookie at (10, 1) is tok_x10_y1
 		Location nameLoc = this.locations.get(name);
-		HashSet<Type> fieldEl = this.fields.get(nameLoc);
-		if (fieldEl.containsKey(Map.Type.COOKIE) && fieldEl.containsKey(Map.Type.PACMAN)) {
+		HashSet<Type> fieldEl = this.field.get(nameLoc);
+		if (fieldEl.contains(Map.Type.COOKIE) && fieldEl.contains(Map.Type.PACMAN)) {
 			//this.locations.remove(name);
 			String cookieID = "tok_x" + nameLoc.x + "_y" + nameLoc.y;
 			this.locations.remove(cookieID);

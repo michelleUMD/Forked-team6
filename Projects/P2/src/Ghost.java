@@ -1,6 +1,6 @@
 import java.util.HashSet;
 import java.util.ArrayList;
-
+//...
 public class Ghost{
 	String myName;
 	Location myLoc;
@@ -21,21 +21,21 @@ public class Ghost{
 		
 
         if(!(myMap.getLoc(new Location(x_coordinate+1, y_coordinate)).contains(Map.Type.WALL))){
-			arr.add(x_coordinate+1, y_coordinate);
+			arr.add(new Location(x_coordinate+1, y_coordinate));
 		} else if (!myMap.getLoc(new Location(x_coordinate+1, y_coordinate+1)).contains(Map.Type.WALL)){
-			arr.add(x_coordinate+1, y_coordinate+1);
+			arr.add(new Location(x_coordinate+1, y_coordinate+1));
 		} else if (!(myMap.getLoc(new Location(x_coordinate, y_coordinate+1)).contains(Map.Type.WALL))) {
-			arr.add(x_coordinate, y_coordinate+1);
+			arr.add(new Location(x_coordinate, y_coordinate+1));
 		} else if (!(myMap.getLoc(new Location(x_coordinate, y_coordinate-1)).contains(Map.Type.WALL)) && y_coordinate != 0) {
-			arr.add(x_coordinate, y_coordinate-1);
+			arr.add(new Location(x_coordinate, y_coordinate-1));
 		} else if (!(myMap.getLoc(new Location(x_coordinate+1, y_coordinate-1)).contains(Map.Type.WALL)) && y_coordinate != 0) {
-			arr.add(x_coordinate+1, y_coordinate-1);
+			arr.add(new Location(x_coordinate+1, y_coordinate-1));
 		} else if (!(myMap.getLoc(new Location(x_coordinate-1, y_coordinate)).contains(Map.Type.WALL)) && x_coordinate != 0) {
-			arr.add(x_coordinate-1, y_coordinate);
+			arr.add(new Location(x_coordinate-1, y_coordinate));
 		} else if (!(myMap.getLoc(new Location(x_coordinate-1, y_coordinate-1)).contains(Map.Type.WALL)) && y_coordinate != 0 && x_coordinate != 0 ) {
-			arr.add(x_coordinate-1, y_coordinate-1);
+			arr.add(new Location(x_coordinate-1, y_coordinate-1));
 		} else if (!(myMap.getLoc(new Location(x_coordinate-1, y_coordinate+1)).contains(Map.Type.WALL)) && x_coordinate != 0 ) {
-			arr.add(x_coordinate-1, y_coordinate+1);
+			arr.add(new Location(x_coordinate-1, y_coordinate+1));
 		}
 
         	return arr;
@@ -44,8 +44,13 @@ public class Ghost{
 	public boolean move() {
 		boolean res = true;
 		ArrayList<Location> possible = this.get_valid_moves();
-		if (possible.isEmpty() == true) { res = false; }
-		myLoc = possible.get(0);
+		Location temp_loc = null;
+		if (possible.isEmpty()) { 
+			res = false; 
+		} else {
+			temp_loc = possible.get(0);
+			this.myMap.move(this.myName, temp_loc, Map.Type.GHOST);
+		}
 		return res;	
 	}
 
@@ -62,13 +67,13 @@ public class Ghost{
 			return true;
 		} else if (myMap.getLoc(new Location(x_val, y_val+1)).contains(Map.Type.PACMAN)) {
 			return true;
-		} else if (myMap.getLoc(new Location(x_val, y_val-1)).contains(Map.Type.PACMAN) y_val != 0) {
+		} else if (myMap.getLoc(new Location(x_val, y_val-1)).contains(Map.Type.PACMAN) && y_val != 0) {
 			return true;
-		} else if (myMap.getLoc(new Location(x_val+1, y_val-1)).contains(Map.Type.PACMAN) y_val != 0) {
+		} else if (myMap.getLoc(new Location(x_val+1, y_val-1)).contains(Map.Type.PACMAN) && y_val != 0) {
 			return true;
-		} else if (myMap.getLoc(new Location(x_val-1, y_val)).contains(Map.Type.PACMAN) x_val != 0) {
+		} else if (myMap.getLoc(new Location(x_val-1, y_val)).contains(Map.Type.PACMAN) && x_val != 0) {
 			return true;
-		} else if (myMap.getLoc(new Location(x_val-1, y_val-1)).contains(Map.Type.PACMAN) && x_val != 0 y_val != 0) {
+		} else if (myMap.getLoc(new Location(x_val-1, y_val-1)).contains(Map.Type.PACMAN) && x_val != 0 && y_val != 0) {
 			return true;
 		} else if (myMap.getLoc(new Location(x_val-1, y_val+1)).contains(Map.Type.PACMAN) && x_val != 0) {
 			return true;

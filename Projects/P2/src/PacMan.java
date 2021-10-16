@@ -22,21 +22,21 @@ public class PacMan{
         	boolean b = false;
 
         if(!(myMap.getLoc(new Location(x_coordinate+1, y_coordinate)).contains(Map.Type.WALL))){
-			arr.add(x_coordinate+1, y_coordinate);
+			arr.add(new Location(x_coordinate+1, y_coordinate));
 		} else if (!myMap.getLoc(new Location(x_coordinate+1, y_coordinate+1)).contains(Map.Type.WALL)){
-			arr.add(x_coordinate+1, y_coordinate+1);
+			arr.add(new Location(x_coordinate+1, y_coordinate+1));
 		} else if (!(myMap.getLoc(new Location(x_coordinate, y_coordinate+1)).contains(Map.Type.WALL))) {
-			arr.add(x_coordinate, y_coordinate+1);
+			arr.add(new Location(x_coordinate, y_coordinate+1));
 		} else if (!(myMap.getLoc(new Location(x_coordinate, y_coordinate-1)).contains(Map.Type.WALL)) && y_coordinate != 0) {
-			arr.add(x_coordinate, y_coordinate-1);
+			arr.add(new Location(x_coordinate, y_coordinate-1));
 		} else if (!(myMap.getLoc(new Location(x_coordinate+1, y_coordinate-1)).contains(Map.Type.WALL)) && y_coordinate != 0) {
-			arr.add(x_coordinate+1, y_coordinate-1);
+			arr.add(new Location(x_coordinate+1, y_coordinate-1));
 		} else if (!(myMap.getLoc(new Location(x_coordinate-1, y_coordinate)).contains(Map.Type.WALL)) && x_coordinate != 0) {
-			arr.add(x_coordinate-1, y_coordinate);
+			arr.add(new Location(x_coordinate-1, y_coordinate));
 		} else if (!(myMap.getLoc(new Location(x_coordinate-1, y_coordinate-1)).contains(Map.Type.WALL)) && y_coordinate != 0 && x_coordinate != 0 ) {
-			arr.add(x_coordinate-1, y_coordinate-1);
+			arr.add(new Location(x_coordinate-1, y_coordinate-1));
 		} else if (!(myMap.getLoc(new Location(x_coordinate-1, y_coordinate+1)).contains(Map.Type.WALL)) && x_coordinate != 0 ) {
-			arr.add(x_coordinate-1, y_coordinate+1);
+			arr.add(new Location(x_coordinate-1, y_coordinate+1));
 		}
 
 		//return arraylist
@@ -47,6 +47,8 @@ public class PacMan{
 		ArrayList<Location> arr = this.get_valid_moves();
 		if (arr.size() > 0) {
 			Location newLoc = arr.get(0);
+			// this.myLoc = newLoc;
+			this.myMap.move(myName, newLoc, Map.Type.PACMAN);
 			this.myLoc = newLoc;
 			return true;
 		} else 
@@ -64,13 +66,13 @@ public class PacMan{
 			return true;
 		} else if (myMap.getLoc(new Location(x_val, y_val+1)).contains(Map.Type.GHOST)) {
 			return true;
-		} else if (myMap.getLoc(new Location(x_val, y_val-1)).contains(Map.Type.GHOST) y_val != 0) {
+		} else if (myMap.getLoc(new Location(x_val, y_val-1)).contains(Map.Type.GHOST) && y_val != 0) {
 			return true;
-		} else if (myMap.getLoc(new Location(x_val+1, y_val-1)).contains(Map.Type.GHOST) y_val != 0) {
+		} else if (myMap.getLoc(new Location(x_val+1, y_val-1)).contains(Map.Type.GHOST) && y_val != 0) {
 			return true;
-		} else if (myMap.getLoc(new Location(x_val-1, y_val)).contains(Map.Type.GHOST) x_val != 0) {
+		} else if (myMap.getLoc(new Location(x_val-1, y_val)).contains(Map.Type.GHOST) && x_val != 0) {
 			return true;
-		} else if (myMap.getLoc(new Location(x_val-1, y_val-1)).contains(Map.Type.GHOST) && x_val != 0 y_val != 0) {
+		} else if (myMap.getLoc(new Location(x_val-1, y_val-1)).contains(Map.Type.GHOST) && x_val != 0 && y_val != 0) {
 			return true;
 		} else if (myMap.getLoc(new Location(x_val-1, y_val+1)).contains(Map.Type.GHOST) && x_val != 0) {
 			return true;
@@ -80,7 +82,7 @@ public class PacMan{
 	}
 
 	public JComponent consume() { 
-		if (myMap.getLoc(myLoc) == Map.Type.COOKIE) {
+		if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE)) {
 			return myMap.eatCookie("pacman");//? may be incorrect string
 			
 		}

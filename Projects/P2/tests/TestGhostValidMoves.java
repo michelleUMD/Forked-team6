@@ -23,7 +23,7 @@ public class TestGhostValidMoves extends TestCase {
 		arr.add(1,2);
 
 		boolean bool =false;
-		if(arr == ghost.get_valid_moves(){
+		if(arr == ghost.get_valid_moves()) {
 			bool = true;
 		}
 		

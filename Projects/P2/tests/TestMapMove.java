@@ -23,7 +23,7 @@ public class TestMapMove {
 
 		assertFalse(myMap.move("pacman", new Location(1, 1), Map.Type.PACMAN));
 
-		assertTrue(myMap.move("pacman", new Location(1, 3), Map.Type.PACMAN))
+		assertTrue(myMap.move("pacman", new Location(1, 3), Map.Type.PACMAN));
 
 	}
 }

@@ -19,7 +19,7 @@ public class TestPacManValidMoves extends TestCase {
 		Map myMap = frame.getMap();
 
 		ArrayList<Location> arr = new ArrayList<>();
-		arr.add(1,2);
+		arr.add(new Location(1,2));
 		boolean bool =false;
 		if(arr == pacman.get_valid_moves()){
 			bool = true;

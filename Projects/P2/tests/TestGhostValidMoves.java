@@ -1,6 +1,7 @@
 import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
+import java.util.ArrayList;
 
 public class TestGhostValidMoves extends TestCase {
 
@@ -20,7 +21,7 @@ public class TestGhostValidMoves extends TestCase {
 		Map myMap = frame.getMap();
 
 		ArrayList<Location> arr = new ArrayList<>();
-		arr.add(1,2);
+		arr.add(new Location(1,2));
 
 		boolean bool =false;
 		if(arr == ghost.get_valid_moves()) {
@@ -28,6 +29,6 @@ public class TestGhostValidMoves extends TestCase {
 		}
 		
 		//False
-		assertFalse(arr);
+		assertFalse(bool);
 	}
 }

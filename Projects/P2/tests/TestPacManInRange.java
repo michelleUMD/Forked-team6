@@ -19,6 +19,6 @@ public class TestPacManInRange extends TestCase {
 		//Start The Game
 		frame.startGame();
 
-		assertTrue(pacman.is_pacman_in_range());
+		assertTrue(ghost.is_pacman_in_range());
 	}
 }

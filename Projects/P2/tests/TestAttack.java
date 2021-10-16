@@ -4,9 +4,9 @@ import java.io.*;
 
 public class TestAttack extends TestCase {
 
-	public void testAttack(){
-		
-		NoFrame frame = new NoFrame(); //Creates A New Map With Walls and Tokens w/o a Display
+	public void testAttack() throws FileNotFoundException{
+		try {
+			NoFrame frame = new NoFrame(); //Creates A New Map With Walls and Tokens w/o a Display
 
 		//Creating Players
 		PacMan pacman = frame.addPacMan(new Location(2, 3));
@@ -21,6 +21,10 @@ public class TestAttack extends TestCase {
 		Map myMap = frame.getMap();
 
 		assertTrue(ghost.attack());
+		} catch (Exception e) {
+			
+		}
+		
 
 		
 	}

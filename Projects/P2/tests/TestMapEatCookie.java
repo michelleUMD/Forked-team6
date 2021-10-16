@@ -1,10 +1,10 @@
 import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
-
+// import org.junit.*;
 public class TestMapEatCookie {
 	
-	public void testMapEatCookie() {
+	public void testMapEatCookie() throws FileNotFoundException{
 		//Creating A Map
 		// Mainframe frame = new MainFrame(); //Creates A New Map With Walls and Tokens Initialized
 		NoFrame frame = new NoFrame(); //Creates A New Map With Walls and Tokens w/o a Display
@@ -19,6 +19,6 @@ public class TestMapEatCookie {
 		//Start The Game
 		frame.startGame();
 
-		assertTrue(frame.getMap().eatCookie("pacman") != null);
+		Assert.assertTrue(frame.getMap().eatCookie("pacman") != null);
 	}
 }

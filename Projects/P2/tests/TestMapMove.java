@@ -4,7 +4,7 @@ import java.io.*;
 
 public class TestMapMove {
 
-	public void testMapMove() {
+	public void testMapMove() throws FileNotFoundException{
 			//Creating A Map
 		//Mainframe frame = new MainFrame(); //Creates A New Map With Walls and Tokens Initialized
 		NoFrame frame = new NoFrame(); //Creates A New Map With Walls and Tokens w/o a Display
@@ -21,9 +21,9 @@ public class TestMapMove {
 
 		Map myMap = frame.getMap();
 
-		assertFalse(myMap.move("pacman", new Location(1, 1), Map.Type.PACMAN));
+		Assert.assertFalse(myMap.move("pacman", new Location(1, 1), Map.Type.PACMAN));
 
-		assertTrue(myMap.move("pacman", new Location(1, 3), Map.Type.PACMAN));
+		Assert.assertTrue(myMap.move("pacman", new Location(1, 3), Map.Type.PACMAN));
 
 	}
 }

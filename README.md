@@ -1,5 +1,5 @@
-# cmsc389T-fall21
-​​# Project 2: PacMan
+# Project 2: PacMan , cmsc389T-fall21
+
 Group Members: Mark Mudimba, Chris Park, Kashif Peshimam, Vibhor Goel
 
 

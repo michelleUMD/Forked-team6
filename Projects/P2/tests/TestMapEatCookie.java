@@ -2,7 +2,7 @@ import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
 // import org.junit.*;
-public class TestMapEatCookie {
+public class TestMapEatCookie extends TestCase {
 	
 	public void testMapEatCookie() throws FileNotFoundException{
 		//Creating A Map
@@ -19,6 +19,6 @@ public class TestMapEatCookie {
 		//Start The Game
 		frame.startGame();
 
-		Assert.assertTrue(frame.getMap().eatCookie("pacman") != null);
+		assertTrue(frame.getMap().eatCookie("pacman") != null);
 	}
 }

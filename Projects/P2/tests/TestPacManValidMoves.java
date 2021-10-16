@@ -2,6 +2,7 @@ import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
 import java.util.ArrayList;
+import static org.junit.Assert.*;
 
 public class TestPacManValidMoves extends TestCase {
 

@@ -1,3 +1,4 @@
+import static org.junit.Assert.*;
 import junit.framework.*;
 import java.awt.Color;
 import java.io.*;

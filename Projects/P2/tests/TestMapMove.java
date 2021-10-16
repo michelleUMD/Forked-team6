@@ -1,8 +1,9 @@
+import static org.junit.Assert.*;
 import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
 
-public class TestMapMove {
+public class TestMapMove extends TestCase{
 
 	public void testMapMove() throws FileNotFoundException{
 			//Creating A Map
@@ -10,8 +11,8 @@ public class TestMapMove {
 		NoFrame frame = new NoFrame(); //Creates A New Map With Walls and Tokens w/o a Display
 
 		//Creating Players
-		Ghost ghost = frame.addGhost(new Location(1, 1), "name", Color.red); //Creates a red ghost named "name" at location x,y
-		PacMan pacman = frame.addPacMan(new Location(1, 2)); //Creates PacMan at location x, y
+		Ghost ghost = frame.addGhost(new Location(2, 2), "name", Color.red); //Creates a red ghost named "name" at location x,y
+		PacMan pacman = frame.addPacMan(new Location(2, 3)); //Creates PacMan at location x, y
 
 		//alternatively if you don't need the PacMan or Ghost objects in your tests
 		//frame.initPlayers(); //Creates all of the players
@@ -21,9 +22,7 @@ public class TestMapMove {
 
 		Map myMap = frame.getMap();
 
-		Assert.assertFalse(myMap.move("pacman", new Location(1, 1), Map.Type.PACMAN));
-
-		Assert.assertTrue(myMap.move("pacman", new Location(1, 3), Map.Type.PACMAN));
+		assertFalse(myMap.move("pacman", new Location(1, 1), Map.Type.PACMAN));
 
 	}
 }

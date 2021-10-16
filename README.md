@@ -3,7 +3,8 @@
 Group Members: Mark Mudimba, Chris Park, Kashif Peshimam, Vibhor Goel
 
 
-*Insert image here*
+![Screen Shot 2021-10-15 at 11 53 01 PM](https://user-images.githubusercontent.com/56524239/137572845-8cd4cd74-9172-4a9f-8c8d-be9c7afe127f.png)
+
 
 To run the pacman program, go to the terminal or command line and type in: 
 ```bash

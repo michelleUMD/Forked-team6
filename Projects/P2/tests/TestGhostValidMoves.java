@@ -13,7 +13,7 @@ public class TestGhostValidMoves extends TestCase {
 		//Creates PacMan at location x, y
 
 		//alternatively if you don't need the PacMan or Ghost objects in your tests
-		frame.initPlayers(); //Creates all of the players
+		//frame.initPlayers(); //Creates all of the players
 
 		//Start The Game
 		frame.startGame();

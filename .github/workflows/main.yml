@@ -120,9 +120,7 @@ jobs:
           run: |
             cd Projects/P2/
             javac -cp "tests/junit-4.10.jar:tests/*:src/*" src/*.java tests/*.java
-            java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestMapMove
-            
-            
+            java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestMapMove    
             
   testghostmove:
     # The type of runner that the job will run on

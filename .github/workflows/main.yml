@@ -24,8 +24,8 @@ jobs:
           java -version
           javac -version
           javac *.java
-
-  testpacmanmove:
+          
+ testpacmanmove:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: openjdk
@@ -121,3 +121,54 @@ jobs:
             cd Projects/P2/
             javac -cp "tests/junit-4.10.jar:tests/*:src/*" src/*.java tests/*.java
             java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestMapMove
+            
+            
+            
+  testghostmove:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: testing ghost move
+        run:  |
+          cd Projects/P2/
+          javac -cp "tests/junit-4.10.jar:tests/*:src/*" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestGhostMove
+  
+  testgetloc:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: testing getLoc
+        run: |
+          cd Projects/P2/
+          javac -cp "tests/junit-4.10.jar:tests/*:src/*" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestMapGetLoc
+  
+  testmapattack:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: testing map attack
+        run:  |
+          cd Projects/P2/
+          javac -cp "tests/junit-4.10.jar:tests/*:src/*" src/*.java tests/*.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestMapAttack
+            

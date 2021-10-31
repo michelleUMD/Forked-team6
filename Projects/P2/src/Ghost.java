@@ -50,6 +50,7 @@ public class Ghost{
 		} else {
 			temp_loc = possible.get(0);
 			this.myMap.move(this.myName, temp_loc, Map.Type.GHOST);
+			this.myLoc = temp_loc;
 		}
 		return res;	
 	}

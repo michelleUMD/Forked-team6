@@ -73,16 +73,9 @@ public class Map{
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
-		HashSet<Type> res = new HashSet<>();
-		if (wallSet.contains(loc)) { res.add(Map.Type.WALL); }
-		else if (emptySet.contains(loc)) { res.add(Map.Type.EMPTY); }
-		// else {
-		// 	res.add(field.get(loc));
-		// }
-		for (Type t : field.get(loc)) {//\\
-			res.add(t);
-		}
-		return res;
+		HashSet<Type> typeOf = field.get(loc);
+		if (typeOf == null) { return emptySet; }
+		else { return typeOf; }
 	}
 
 	public boolean attack(String name) {

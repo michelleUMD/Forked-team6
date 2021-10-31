@@ -36,7 +36,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: testing ghost move
-        run:
+        run: |
           javac -cp "Projects/P2/tests/" TestGhostMove.java -o TestGhostMove
           java -cp "Projects/P2/tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestGhostMove
   
@@ -51,7 +51,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: testing getLoc
-        run:
+        run: |
           javac -cp "Projects/P2/tests/junit-4.10.jar:tests/*:src/*" src/*.java tests/*.java
           java -cp "Projects/P2/tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestMapGetLoc
   
@@ -66,6 +66,6 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: testing map attack
-        run:
+        run: |
           javac -cp "tests/junit-4.10.jar:tests/*:src/*" src/*.java tests/*.java
           java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestMapAttack

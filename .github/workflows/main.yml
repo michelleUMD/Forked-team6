@@ -52,8 +52,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: testing getLoc
         run:
-          javac -cp "tests/junit-4.10.jar:tests/*:src/*" src/*.java tests/*.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestMapGetLoc
+          javac -cp "Projects/P2/tests/junit-4.10.jar:tests/*:src/*" src/*.java tests/*.java
+          java -cp "Projects/P2/tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestMapGetLoc
   
   testmapattack:
     # The type of runner that the job will run on

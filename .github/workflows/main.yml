@@ -38,7 +38,7 @@ jobs:
       - name: testing ghost move
         run:
           javac -cp "Projects/P2/tests/junit-4.10.jar:src/:tests/" Projects/P2/src/*.java Projects/P2/tests/TestGhostMove.java
-          java -Djava.awt.headless=true -cp "Projects/P2/tests/junit-4.10.jar:Projects/P2/src/:Projects/P2/tests/" org.junit.runner.JUnitCore TestGhostMove
+          java -cp "Projects/P2/tests/junit-4.10.jar:Projects/P2/src/:Projects/P2/tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestGhostMove
 
   testgetloc:
     # The type of runner that the job will run on

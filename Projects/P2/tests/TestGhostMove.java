@@ -12,6 +12,7 @@ public class TestGhostMove extends TestCase {
 		frame.getMap().add("wall", new Location(9,10), wallC, Map.Type.WALL);
 		frame.startGame();
 		// should be surrounded by walls, hence no possible move
-		assertFalse(ghost.move());
+		ghost.move();
+		assertTrue(ghost.myLoc.equals(new Location(9,11)));
 	}
 }

@@ -25,7 +25,7 @@ jobs:
           javac -version
           javac *.java
           
- testpacmanmove:
+  testpacmanmove:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: openjdk

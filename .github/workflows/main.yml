@@ -37,7 +37,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: testing ghost move
         run:
-          javac -cp "Projects/P2/tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestGhostMove.java
+          javac -cp "Projects/P2/tests/junit-4.10.jar:src/:tests/" TestGhostMove.java -o TestGhostMove
           java -cp "Projects/P2/tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestGhostMove
   
   testgetloc:

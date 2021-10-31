@@ -37,9 +37,9 @@ jobs:
       # Runs a single command using the runners shell
       - name: testing ghost move
         run:
-          cd Projects/P2
-          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
+          javac -cp "Projects/P2/src/" Projects/P2/src/*.java
+          javac -cp "Projects/P2/tests/junit-4.10.jar:Projects/P2/src/:tests/" Projects/P2/src/*.java Projects/P2/tests/*.java
+          java -Djava.awt.headless=true -cp "Projects/P2/tests/junit-4.10.jar:Projects/P2/src/:Projects/P2/tests/" org.junit.runner.JUnitCore TestGhostMove
 
   testgetloc:
     # The type of runner that the job will run on

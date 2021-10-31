@@ -9,10 +9,10 @@ public class TestGhostMove extends TestCase {
 	public void testGhostMove() throws FileNotFoundException{
 		NoFrame frame = new NoFrame();
 		Ghost ghost = frame.addGhost(new Location(9,11), "test_ghost", Color.red);
+		ArrayList<Location> possible = ghost.get_valid_moves();
 		frame.startGame();
 		// should be surrounded by walls, hence no possible move
 		assertTrue(ghost.move());
-		ArrayList<Location> possible = ghost.get_valid_moves();
 		assertTrue(possible.contains(ghost.myLoc));
 	}
 }

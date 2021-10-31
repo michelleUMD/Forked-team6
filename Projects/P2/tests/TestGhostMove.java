@@ -8,11 +8,10 @@ public class TestGhostMove extends TestCase {
 	public void testGhostMove() throws FileNotFoundException{
 		NoFrame frame = new NoFrame();
 		Ghost ghost = frame.addGhost(new Location(9,11), "test_ghost", Color.red);
-		WallComponent wallC = new WallComponent(9,10,frame.scale);
-		frame.getMap().add("wall", new Location(9,10), wallC, Map.Type.WALL);
 		frame.startGame();
 		// should be surrounded by walls, hence no possible move
-		ghost.move();
-		assertTrue(ghost.myLoc.equals(new Location(9,11)));
+		assertTrue(ghost.move());
+		ArrayList<Location> possible = ghost.get_valid_moves();
+		assertTrue(possible.contains(ghost.myLoc));
 	}
 }

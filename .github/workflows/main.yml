@@ -22,7 +22,8 @@ jobs:
         run:
           echo Hello World
           javac -cp "Projects/P2/src/" Projects/P2/src/*.java
-          javac -cp "Projects/P2/tests/junit-4.10.jar:src/:tests/" Projects/P2/src/*.java Projects/P2/tests/*.java
+          javac -cp "Projects/P2/tests/junit-4.10.jar:src/:tests/" Projects/P2/src/*.java 
+          javac -cp "Projects/P2/tests/junit-4.10.jar:src/:tests/" Projects/P2/tests/*.java
           
   testghostmove:
     # The type of runner that the job will run on

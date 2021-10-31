@@ -38,4 +38,4 @@ jobs:
       - name: Test PacMan Get Valid Moves
         run:
           javac -cp "tests/junit-4.10.jar:tests/*:src/*" src/*.java tests/*.java
-          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:Projects/P2/src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves

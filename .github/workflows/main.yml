@@ -37,5 +37,5 @@ jobs:
       # Runs a single command using the runners shell
       - name: Test PacMan Get Valid Moves
         run: |
-          javac -cp "tests/junit-4.10.jar:tests/*:src/*" src/*.java tests/*.java
+          javac -cp "tests/junit-4.10.jar:tests/*:src/*" Projects/P2/src/*.java Projects/P2/tests/*.java
           java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestPacManValidMoves

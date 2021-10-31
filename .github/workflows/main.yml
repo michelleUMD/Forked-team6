@@ -37,8 +37,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: testing ghost move
         run:
-          cd Projects/P2/
-          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
+          java -cp "Projects/P2/tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestGhostMove
   
   testgetloc:
     # The type of runner that the job will run on

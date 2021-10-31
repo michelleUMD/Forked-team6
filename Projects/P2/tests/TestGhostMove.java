@@ -1,5 +1,6 @@
 import junit.framework.*;
 import java.awt.Color;
+import java.util.ArrayList;
 import java.io.*;
 import static org.junit.Assert.*;
 

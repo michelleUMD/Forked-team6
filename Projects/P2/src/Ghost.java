@@ -62,13 +62,13 @@ public class Ghost{
 		x_val = this.myLoc.x;
 		y_val = this.myLoc.y;
 		
-		if(myMap.getLoc(new Location(x_vl+1, y_val)).contains(Map.Type.PACMAN)){
+		if(myMap.getLoc(new Location(x_val+1, y_val)).contains(Map.Type.PACMAN)){
 			return true;
 		} else if (myMap.getLoc(new Location(x_val+1, y_val+1)).contains(Map.Type.PACMAN)) {
 			return true;
-		} else if (myMap.getLoc(new Location(x_val, y_val+1)).contains(Map.Tpe.PACMAN)) {
+		} else if (myMap.getLoc(new Location(x_val, y_val+1)).contains(Map.Type.PACMAN)) {
 			return true;
-		} else if (myMapgetLoc(new Location(x_val, y_val-1)).contains(Map.Type.PACMAN) && y_val != 0) {
+		} else if (myMap.getLoc(new Location(x_val, y_val-1)).contains(Map.Type.PACMAN) && y_val != 0) {
 			return true;
 		} else if (myMap.getLoc(new Location(x_val+1, y_val-1)).contains(Map.Type.PACMAN) && y_val != 0) {
 			return true;

@@ -63,11 +63,11 @@ public class PacMan{
 		
 		if(myMap.getLoc(new Location(x_val+1, y_val)).contains(Map.Type.GHOST)){
 			return true;
-		} else if (myMap.getLoc(new Location(x_val+1, y_val+1)).contains(Map.Type.GHOST)) {
+		} else if (myMap.getLoc(new Loction(x_val+1, y_val+1)).contains(Map.Type.GHOST)) {
 			return true;
-		} else if (myMap.getLoc(new Location(x_val, y_val+1)).contains(Map.Type.GHOST)) {
+		} else if (myMap.getLoc(new Location(x_val, y_val+1)).contain(Map.Type.GHOST)) {
 			return true;
-		} else if (myMap.getLoc(new Location(x_val, y_val-1)).contains(Map.Type.GHOST) && y_val != 0) {
+		} else if (myMap.gtLoc(new Location(x_val, y_val-1)).contains(Map.Type.GHOST) && y_val != 0) {
 			return true;
 		} else if (myMap.getLoc(new Location(x_val+1, y_val-1)).contains(Map.Type.GHOST) && y_val != 0) {
 			return true;

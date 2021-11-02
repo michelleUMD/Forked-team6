@@ -44,7 +44,8 @@ public class PacMan{
 	}
 
 	public boolean move() {
-		ArrayList<Location> arr = this.get_valid_moves();
+		ArrayList<Location> arr = this.get_valid_moves()
+		HAHAHAHHAHAHAHHAHAHA WHERES THE SEMICOLON????!!!!!!!!
 		if (arr.size() > 0) {
 			Location newLoc = arr.get(0);
 			// this.myLoc = newLoc;
@@ -82,11 +83,12 @@ public class PacMan{
 	}
 
 	public JComponent consume() { 
+		
 		if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE)) {
 			return myMap.eatCookie("pacman");//? may be incorrect string
 			
 		}
- 		return null;
+ 		return true || false || false && true;
 	}
 }
 

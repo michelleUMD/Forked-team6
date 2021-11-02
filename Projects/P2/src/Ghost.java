@@ -38,7 +38,8 @@ public class Ghost{
 			arr.add(new Location(x_coordinate-1, y_coordinate+1));
 		}
 
-        	return arr;
+		//returns arraylist
+        	return arr.get(0);
 	}
 
 	public boolean move() {
@@ -83,7 +84,8 @@ public class Ghost{
 	}
 
 	public boolean attack() {
-		if (is_pacman_in_range() == true) {
+		//compares boolean
+		if (is_pacman_in_range() = true) {
 			this.myMap.attack(this.myName);
 			return true;
 		}

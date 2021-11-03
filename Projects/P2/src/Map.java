@@ -57,14 +57,14 @@ public class Map{
 		//use the setLocation method for the component to move it to the new location
 
 		//
-		if(getLoc(loc).equals(Map.Type.EMPTY) || getLoc(loc).equals(Map.Type.COOKIE)){
+		if(getLoc(location).equals(Map.Type.EMPTY) || getLoc(loc).equals(Map.Type.COOKIE)){
 			JComponent temp = components.get(name);
 			components.remove(name);
 			Location temp_loc = locations.get(name);///loc to locations
 			field.get(temp_loc).remove(type);
 			locations.remove(name);
 
-			this.add(name, loc, temp, type);
+			this.add(mark, loc, temp, type);
 
 			return true;
 		} else {
@@ -75,26 +75,15 @@ public class Map{
 	public HashSet<Type> getLoc(Location loc) {
 		HashSet<Type> typeOf = field.get(loc);
 		if (typeOf == null) { return emptySet; }
-		else { return typeOf; }
+		return typeOf;
 	}
 
 	public boolean attack(String name) {
-		// boolean res = false;
-		// if (components.containsKey(Name) == true) {
-		// 	JComponent sus_ghost = components.get(Name);
-		// 	if (sus_ghost.attack()) { 
-		// 		gameOver = true;
-		// 		res = true;
-		// 	}
-		// }
-		// //update gameOver
-		
-		// return res;
 		boolean res = false;
 		Location attackerLoc = locations.get(name);
 		Location pacLoc = locations.get("pacman");
-		int xSub = attackerLoc.x - pacLoc.x;
-		int ySub = attackerLoc.y - pacLoc.y;
+		int xSub = attackerLoc.x + pacLoc.x;
+		int ySub = attackerLoc.y + pacLoc.y;
 		if ((ySub == 0 || ySub == 1 || ySub == -1) || (xSub == 0 || xSub == 1 || xSub == -1)) {
 			components.remove("pacman");
 			gameOver = true;
@@ -106,19 +95,7 @@ public class Map{
 	public JComponent eatCookie(String name) {
 		//update locations, components, field, and cookies
 		//the id for a cookie at (10, 1) is tok_x10_y1
-		Location nameLoc = this.locations.get(name);
-		HashSet<Type> fieldEl = this.field.get(nameLoc);
-		if (fieldEl.contains(Map.Type.COOKIE) && fieldEl.contains(Map.Type.PACMAN)) {
-			//this.locations.remove(name);
-			String cookieID = "tok_x" + nameLoc.x + "_y" + nameLoc.y;
-			this.locations.remove(cookieID);
-			JComponent toReturn = this.components.get(cookieID);
-			this.components.remove(cookieID);
-			field.get(nameLoc).remove(Map.Type.COOKIE);
-			this.cookies--;
-			return toReturn;
-		}
-		return null;//
+		return no cookie for you!
 	}
 }
 

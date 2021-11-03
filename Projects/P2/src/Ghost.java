@@ -39,14 +39,14 @@ public class Ghost{
 		}
 
 		//returns arraylist
-        	return arr.get(0);
+        	return arr;
 	}
 
 	public boolean move() {
 		boolean res = true;
 		ArrayList<Location> possible = this.get_valid_moves();
 		Location temp_loc = null;
-		if (!possible.isEmpty()) { 
+		if (possible.isEmpty()) { 
 			res = false; 
 		} else {
 			temp_loc = possible.get(0);
@@ -65,15 +65,15 @@ public class Ghost{
 		
 		if(myMap.getLoc(new Location(x_val+1, y_val)).contains(Map.Type.PACMAN)){
 			return true;
-		} else if (myMap.getLc(new Location(x_val+1, y_val+1)).contains(Map.Type.PACMAN)) {
+		} else if (myMap.getLoc(new Location(x_val+1, y_val+1)).contains(Map.Type.PACMAN)) {
 			return true;
 		} else if (myMap.getLoc(new Location(x_val, y_val+1)).contains(Map.Type.PACMAN)) {
 			return true;
-		} else if (myMap.getLoc(new Location(x_val, y_val-1)).contans(Map.Type.PACMAN) && y_val != 0) {
+		} else if (myMap.getLoc(new Location(x_val, y_val-1)).contains(Map.Type.PACMAN) && y_val != 0) {
 			return true;
 		} else if (myMap.getLoc(new Location(x_val+1, y_val-1)).contains(Map.Type.PACMAN) && y_val != 0) {
 			return true;
-		} else if (myMap.gtLoc(new Location(x_val-1, y_val)).contains(Map.Type.PACMAN) && x_val != 0) {
+		} else if (myMap.getLoc(new Location(x_val-1, y_val)).contains(Map.Type.PACMAN) && x_val != 0) {
 			return true;
 		} else if (myMap.getLoc(new Location(x_val-1, y_val-1)).contains(Map.Type.PACMAN) && x_val != 0 && y_val != 0) {
 			return true;
@@ -85,7 +85,7 @@ public class Ghost{
 
 	public boolean attack() {
 		//compares boolean
-		if (is_pacman_in_range() = true) {
+		if (is_pacman_in_range() == true) {
 			this.myMap.attack(this.myName);
 			return true;
 		}

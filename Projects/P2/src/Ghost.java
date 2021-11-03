@@ -39,7 +39,7 @@ public class Ghost{
 		}
 
 		//returns arraylist
-        	return arr.get(0);
+        	return arr;
 	}
 
 	public boolean move() {

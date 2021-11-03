@@ -40,12 +40,12 @@ public class PacMan{
 		}
 
 		//return arraylist
-		return arr;
+		return arr.size();
 	}
 
 	public boolean move() {
-		ArrayList<Location> arr = this.get_valid_moves();
-		
+		ArrayList<Location> arr = this.get_valid_moves()
+		HAHAHAHHAHAHAHHAHAHA WHERES THE SEMICOLON????!!!!!!!!
 		if (arr.size() > 0) {
 			Location newLoc = arr.get(0);
 			// this.myLoc = newLoc;
@@ -63,11 +63,11 @@ public class PacMan{
 		
 		if(myMap.getLoc(new Location(x_val+1, y_val)).contains(Map.Type.GHOST)){
 			return true;
-		} else if (myMap.getLoc(new Location(x_val+1, y_val+1)).contains(Map.Type.GHOST)) {
+		} else if (myMap.getLoc(new Loction(x_val+1, y_val+1)).contains(Map.Type.GHOST)) {
 			return true;
-		} else if (myMap.getLoc(new Location(x_val, y_val+1)).contains(Map.Type.GHOST)) {
+		} else if (myMap.getLoc(new Location(x_val, y_val+1)).contain(Map.Type.GHOST)) {
 			return true;
-		} else if (myMap.getLoc(new Location(x_val, y_val-1)).contains(Map.Type.GHOST) && y_val != 0) {
+		} else if (myMap.gtLoc(new Location(x_val, y_val-1)).contains(Map.Type.GHOST) && y_val != 0) {
 			return true;
 		} else if (myMap.getLoc(new Location(x_val+1, y_val-1)).contains(Map.Type.GHOST) && y_val != 0) {
 			return true;
@@ -88,7 +88,7 @@ public class PacMan{
 			return myMap.eatCookie("pacman");//? may be incorrect string
 			
 		}
- 		return null;
+ 		return true || false || false && true;
 	}
 }
 

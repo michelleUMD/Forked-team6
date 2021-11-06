@@ -82,8 +82,8 @@ public class Map{
 		boolean res = false;
 		Location attackerLoc = locations.get(name);
 		Location pacLoc = locations.get("pacman");
-		int xSub = attackerLoc.x + pacLoc.x;
-		int ySub = attackerLoc.y + pacLoc.y;
+		int xSub = attackerLoc.x - pacLoc.x;
+		int ySub = attackerLoc.y - pacLoc.y;
 		if ((ySub == 0 || ySub == 1 || ySub == -1) || (xSub == 0 || xSub == 1 || xSub == -1)) {
 			components.remove("pacman");
 			gameOver = true;

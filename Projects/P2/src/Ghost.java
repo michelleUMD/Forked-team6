@@ -85,7 +85,7 @@ public class Ghost{
 
 	public boolean attack() {
 		//compares boolean
-		if (is_pacman_in_range() = true) {
+		if (is_pacman_in_range() == true) {
 			this.myMap.attack(this.myName);
 			return true;
 		}

@@ -40,7 +40,7 @@ public class PacMan{
 		}
 
 		//return arraylist
-		return arr.size();
+		return arr;
 	}
 
 	public boolean move() {

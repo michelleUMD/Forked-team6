@@ -57,15 +57,15 @@ public class Map{
 		//use the setLocation method for the component to move it to the new location
 
 		//
-		if(getLoc(location).equals(Map.Type.EMPTY) || getLoc(loc).equals(Map.Type.COOKIE)){
+		if(getLoc(loc).equals(Map.Type.EMPTY) || getLoc(loc).equals(Map.Type.COOKIE)){
 			JComponent temp = components.get(name);
 			components.remove(name);
 			Location temp_loc = locations.get(name);///loc to locations
 			field.get(temp_loc).remove(type);
 			locations.remove(name);
 
-			this.add(mark, loc, temp, type);
-
+			this.add(name, loc, temp, type);	
+			
 			return true;
 		} else {
 			return false;

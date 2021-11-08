@@ -46,7 +46,7 @@ public class Ghost{
 		boolean res = true;
 		ArrayList<Location> possible = this.get_valid_moves();
 		Location temp_loc = null;
-		if (!possible.isEmpty()) { 
+		if (possible.isEmpty()) { 
 			res = false; 
 		} else {
 			temp_loc = possible.get(0);

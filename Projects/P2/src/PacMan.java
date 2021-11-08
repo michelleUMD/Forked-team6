@@ -44,8 +44,7 @@ public class PacMan{
 	}
 
 	public boolean move() {
-		ArrayList<Location> arr = this.get_valid_moves()
-		HAHAHAHHAHAHAHHAHAHA WHERES THE SEMICOLON????!!!!!!!!
+		ArrayList<Location> arr = this.get_valid_moves();
 		if (arr.size() > 0) {
 			Location newLoc = arr.get(0);
 			// this.myLoc = newLoc;

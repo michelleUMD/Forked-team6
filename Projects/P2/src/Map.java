@@ -73,9 +73,9 @@ public class Map{
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
-		HashSet<Type> typeOf = field.get(loc);
-		if (typeOf == null) { return emptySet; }
-		return typeOf;
+		HashSet<Type> element = field.get(loc);
+		if (element == null) { return emptySet; }
+		return element;
 	}
 
 	public boolean attack(String name) {
